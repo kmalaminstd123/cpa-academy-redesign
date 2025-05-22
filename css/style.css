@@ -1,0 +1,378 @@
+/*global css start*/
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+a {
+    text-decoration: none;
+}
+
+ol,
+li {
+    list-style-type: none;
+}
+
+:root {
+    --section-separator: 100px;
+    --header-font: "Manrope", sans-serif;
+    --paragraph-font: "Roboto", sans-serif;
+    --primary-color: #036fb399;
+    --secondery-color: #012F5F;
+    --section-header-font-size: 40px;
+    --section-top-bottom-margin: var(--section-separator);
+    --section-top-bottom-padding: var(--section-separator);
+}
+
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+    font-family: var(--header-font);
+}
+
+p,
+span {
+    font-family: var(--paragraph-font);
+    line-height: 1.7;
+    font-size: 18px;
+}
+
+/*global css end*/
+
+
+/* ====== navbar css start ====== */
+
+.custom-navbar {
+    background: linear-gradient(90deg, #012F5F, #036FB3);
+    padding: 1rem 0;
+    box-shadow: 0 4px 20px rgba(0, 0, 0, 0.1);
+    position: relative;
+    width: 100%;
+    transition: all 0.3s ease;
+    z-index: 999;
+    /* For transition effect */
+    transform: translateY(-100%);
+    opacity: 0;
+}
+
+/* Show navbar initially */
+.custom-navbar.show {
+    transform: translateY(0);
+    opacity: 1;
+}
+
+/* When scrolled */
+.custom-navbar.scrolled {
+    position: fixed;
+    top: 0;
+    left: 0;
+    background: rgba(3, 111, 179, 0.6);
+    backdrop-filter: blur(12px);
+    -webkit-backdrop-filter: blur(12px);
+    box-shadow: 0 8px 24px rgba(0, 0, 0, 0.2);
+    border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+    transform: translateY(0);
+    opacity: 1;
+}
+
+.custom-navbar .nav-link {
+    color: #fff;
+    font-weight: 500;
+    margin-left: 20px;
+    transition: color 0.3s ease, transform 0.3s ease;
+    position: relative;
+}
+
+
+
+.custom-navbar .nav-link.active {
+    color: #012F5F;
+    font-weight: 600;
+}
+
+.nav-above-eff{
+    position: relative;
+}
+
+.nav-above-eff::after{
+    content: '';
+    width: 0%;
+    height: 2px;
+    position: absolute;
+    background-color: #012F5F;
+    bottom: 0;
+    left: 0;
+    transition: all 0.5s linear;
+}
+
+.nav-above-eff:hover::after{
+    width: 100%;
+    left: auto;
+    right: 0;
+}
+
+.logo-wrapper {
+    background: #ffffff;
+    padding: 8px 12px;
+    border-radius: 8px;
+    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+}
+
+.logo-wrapper img {
+    filter: drop-shadow(0 0 6px rgba(255, 255, 255, 0.8));
+}
+
+.logo-wrapper img {
+    background-color: #fff;
+    border-radius: 10px;
+}
+
+.custom-navbar .navbar-toggler {
+    border: none;
+    font-size: 1.25rem;
+    background-color: transparent;
+}
+
+.custom-navbar .navbar-toggler:focus {
+    outline: none;
+    box-shadow: none;
+}
+
+.glass-navbar {
+  background: rgba(3, 111, 179, 0.6); /* Brand color with transparency */
+  backdrop-filter: blur(12px); /* glass effect */
+  -webkit-backdrop-filter: blur(12px);
+  border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+  transition: background 0.3s ease;
+  z-index: 999;
+}
+
+.glass-navbar .nav-link {
+  color: #fff;
+  font-weight: 500;
+  transition: color 0.2s;
+  font-size: 17px;
+}
+
+.glass-navbar .nav-link:hover {
+  color: #012F5F;
+}
+
+.logo-wrapper {
+  background: #ffffff;
+  padding: 6px 10px;
+  border-radius: 8px;
+  box-shadow: 0 1px 6px rgba(0, 0, 0, 0.15);
+}
+
+/* ====== navbar css end ====== */
+
+/* banner slider css start */
+
+.banner-slider-btn{
+    border: 1px solid var(--secondery-color);
+    background-color: var(--secondery-color);
+    font-family: var(--paragraph-font);
+}
+
+.banner-slider-btn:hover{
+    border: 1px solid var(--secondery-color);
+    background-color: transparent;
+}
+
+.bannerSwiperSlider h2{
+    color: #fff;
+    font-family: var(--header-font);
+}
+
+.banner-slider-subtext{
+    font-size: 18px;
+    font-family: var(--paragraph-font);
+}
+
+/* banner slider css end */
+
+
+/* about content css start */
+
+#about-content{
+    margin: var(--section-top-bottom-margin) 0;
+}
+
+#about-content h2{
+    font-size: var(--section-header-font-size);
+    color: var(--secondery-color);
+    font-weight: 800;
+}
+
+/* about content css end */
+
+
+/* about content card start */
+
+#about-cards{
+    margin-bottom: var(--section-top-bottom-margin);
+}
+
+.about-cont-card{
+    position: relative;
+    background-color: #f4f6f9;
+    padding: 40px 20px 10px 20px;
+    transition: all 0.4s linear;
+    height: 100%;
+}
+
+@media only screen and (max-width: 768px){
+    .about-cont-card{
+        margin-bottom: 60px;
+        height: auto;
+    }
+}
+
+.about-cont-card:hover{
+    background-color: var(--secondery-color);
+    color: #fff;
+    transition: all 0.4s linear;
+    box-shadow: 0 0.5rem 1rem rgba(0, 0, 0, 0.15);;
+}
+
+.about-cont-card:hover h4{
+    color: #fff;
+    transition: all 0.4s linear;
+}
+
+.about-cont-card:hover .card-icon{
+    background-color: var(--secondery-color);
+    transition: all 0.4s linear;
+}
+
+.card-icon{
+    position: absolute;
+    left: 50%;
+    top: -30px;
+    transform: translateX(-50%) rotate(45deg);
+    font-size: 25px;
+    background-color: #f4f6f9;
+    height: 60px;
+    width: 60px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    border: 6px solid #fff;
+}
+
+.card-icon i, 
+.card-icon svg, .card-icon img {
+    transform: rotate(-45deg); /* Counter-rotate the icon */
+}
+
+.about-cont-card h4{
+    font-size: 20px;
+    text-align: center;
+    margin-bottom: 30px;
+    font-weight: 700;
+    color: var(--secondery-color);
+}
+
+.about-cont-card p{
+    text-align: justify;
+}
+
+/* about content card end */
+
+/* accounting study section css start */
+
+#accStudy{
+    margin: var(--section-top-bottom-margin) 0;
+}
+
+.acc-study-header h2{
+    font-weight: 800;
+    color: var(--secondery-color);
+}
+
+.acc-sudy-sub-head{
+    color: rgba(0, 0, 0, 0.6);
+    font-size: 15px;
+}
+
+.accStudy-cards .c-cont p{
+    text-align: center;
+    font-size: 16px;
+}
+
+/* accounting study section css end */
+
+/* =========== footer css start here =========== */
+
+.footer-section {
+  background: linear-gradient(145deg, #012F5F 60%, #036fb399 100%);
+  color: #ffffff;
+  font-family: 'Segoe UI', sans-serif;
+}
+
+.footer-logo {
+  font-size: 24px;
+  font-weight: bold;
+  color: #fff;
+}
+
+.footer-logo span {
+  color: #036fb3;
+}
+
+.footer-widget h4 {
+  font-size: 18px;
+  margin-bottom: 20px;
+  color: #ffffff;
+  border-bottom: 2px solid #036fb3;
+  display: inline-block;
+  padding-bottom: 5px;
+}
+
+.footer-widget p {
+  font-size: 14px;
+  opacity: 0.9;
+}
+
+.footer-links {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+}
+
+.footer-links li {
+  margin-bottom: 10px;
+  font-size: 14px;
+}
+
+.footer-links a {
+  color: #ffffff;
+  text-decoration: none;
+  transition: color 0.3s ease;
+}
+
+.footer-links a:hover {
+  color: #036fb3;
+}
+
+.footer-links i {
+  margin-right: 8px;
+  color: #036fb3;
+}
+
+.copyright-text {
+  font-size: 14px;
+  opacity: 0.8;
+  border-top: 1px solid rgba(255, 255, 255, 0.1);
+  padding-top: 20px;
+  margin-top: 20px;
+}
+
+
+/* =========== footer css end here =========== */
