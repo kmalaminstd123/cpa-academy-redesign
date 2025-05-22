@@ -31,3 +31,14 @@ const bannerSwiper = new Swiper('.bannerSwiperSlider', {
     },
     loop: true
 })
+
+// webloader functionality
+
+const webLoader = document.querySelector('.web-loader')
+window.addEventListener('load', ()=> {
+    setTimeout(()=> {
+        webLoader.style.display = 'none'
+    }, 2000)
+
+    // webLoader.style.display = 'none'
+})
