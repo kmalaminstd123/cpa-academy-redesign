@@ -1,0 +1,5 @@
+@media only screen and (max-width: 635px){
+    #about-content h2, .cpa-title {
+        font-size: 30px;
+    }
+}
